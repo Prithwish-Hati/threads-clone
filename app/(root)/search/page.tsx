@@ -1,5 +1,5 @@
 import UserCard from "@/components/cards/UserCard";
-import { fetchAllUsers, fetchUser } from "@/lib/actions/user.actions";
+import { fetchUsers, fetchUser } from "@/lib/actions/user.actions";
 import { currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
@@ -11,7 +11,7 @@ const Page = async () => {
   if (!userInfo?.onboarded) redirect("/onboarding"); //If the value of onboarded property is false in DB, redirecting to onboarding page
 
   // Fetch users
-  const result = await fetchAllUsers({
+  const result = await fetchUsers({
     userId: user.id,
     searchString: "",
     pageNumber: 1,
