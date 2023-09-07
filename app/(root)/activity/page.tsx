@@ -34,6 +34,7 @@ const Page = async () => {
                     height={20}
                     className="rounded-full object-cover"
                   />
+                  
                   <p className="!text-small-regular text-light-1">
                     <span className="mr-1 text-primary-500 text-base-semibold">
                       {activity.author.name}
